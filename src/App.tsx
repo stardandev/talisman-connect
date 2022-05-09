@@ -7,8 +7,6 @@ import {
   web3Accounts,
   web3Enable,
   web3FromAddress,
-  web3ListRpcProviders,
-  web3UseRpcProvider
 } from '@polkadot/extension-dapp';
 
 const talismanWallet = new TalismanWallet();
@@ -70,7 +68,7 @@ function App() {
       injector = await web3FromAddress(address);
       account = address;
     } else if (wallet?.address) {
-      const allInjected = await web3Enable('my cool dapp');
+      await web3Enable('my cool dapp');
       account  = wallet.address;
       injector = await web3FromAddress(wallet.address);
     }
